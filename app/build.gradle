@@ -1,0 +1,23 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    implementation 'com.sparkjava:spark-core:2.3'
+}
+
+application {
+    mainClass = 'io.vocidelcodice.todo.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
