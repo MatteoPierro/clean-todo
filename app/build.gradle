@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id "com.github.ben-manes.versions" version '0.38.0'
 }
 
 repositories {
@@ -7,11 +8,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.sparkjava:spark-core:2.9.3'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
-
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-
-    implementation 'com.sparkjava:spark-core:2.3'
 }
 
 application {
