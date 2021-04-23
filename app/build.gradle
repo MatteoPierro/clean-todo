@@ -21,3 +21,15 @@ application {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+task runSparkApp(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = "io.vocidelcodice.todo.main.spark.SparkApp"
+}
+
+task execute(type:JavaExec) {
+    main = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "NULL"
+    classpath = sourceSets.main.runtimeClasspath
+}
