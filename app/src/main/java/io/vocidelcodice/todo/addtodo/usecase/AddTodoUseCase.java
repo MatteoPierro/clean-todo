@@ -17,7 +17,11 @@ public class AddTodoUseCase implements AddTodoInputBoundary {
         Todo todo = new Todo(123, Priority.HIGH, addTodoInputData.message);
         dataAccessInterface.add(todo);
 
-        AddTodoOutputData addTodoOutputData = new AddTodoOutputData(todo.id(), todo.priority());
-        outputBoundary.addTodoSucceeded(addTodoOutputData);
+        outputBoundary.addTodoSucceeded(toOutputData(todo));
+    }
+
+    private AddTodoOutputData toOutputData(Todo todo) {
+        AddTodoOutputData.Priority priority = todo.priority() == Priority.HIGH ? AddTodoOutputData.Priority.HIGH : null;
+        return new AddTodoOutputData(todo.id(), priority);
     }
 }
