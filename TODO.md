@@ -4,3 +4,6 @@
 * come testo la parte web? (joe)
 * verificare la testabilità
     - che "faccia" avrebbe un test?
+* un solo presenter oppure piu' presenter?
+* ma il modulo che contiene il controller contiene solo il controller?
+  * e anche lo use case?
