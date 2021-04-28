@@ -8,3 +8,4 @@
 * ma il modulo che contiene il controller contiene solo il controller?
   * e anche lo use case?
  * AddTodoUseCase non dovrebbe essere public
+* AddTodoViewModel espone tutti i dati in maniera public anche in modifica
