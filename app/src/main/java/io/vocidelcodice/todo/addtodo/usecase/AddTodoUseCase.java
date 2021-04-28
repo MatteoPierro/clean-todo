@@ -13,7 +13,7 @@ public class AddTodoUseCase implements AddTodoInputBoundary {
     }
 
     @Override
-    public void addTodo(AddTodoInputData addTodoInputData) {
+    public void execute(AddTodoInputData addTodoInputData) {
         Todo todo = new Todo(123, Priority.HIGH, addTodoInputData.message);
         dataAccessInterface.add(todo);
 

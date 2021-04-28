@@ -11,6 +11,6 @@ public class AddTodoController {
     }
 
     public void addTodo(String message) {
-        addTodoUseCase.addTodo(new AddTodoInputData(message));
+        addTodoUseCase.execute(new AddTodoInputData(message));
     }
 }
