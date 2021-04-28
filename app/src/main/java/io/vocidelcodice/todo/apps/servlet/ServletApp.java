@@ -1,4 +1,4 @@
-package io.vocidelcodice.todo.main.servlet;
+package io.vocidelcodice.todo.apps.servlet;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;

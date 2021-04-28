@@ -1,4 +1,4 @@
-package io.vocidelcodice.todo.main.servlet;
+package io.vocidelcodice.todo.apps.servlet;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

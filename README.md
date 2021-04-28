@@ -6,13 +6,13 @@ This is a playground for experimenting with the concepts of the Clean Architectu
 ### Running the apps
 
 ```shell
-./gradlew -PmainClass=io.vocidelcodice.todo.main.spark.SparkApp execute
+./gradlew -PmainClass=io.vocidelcodice.todo.apps.spark.SparkApp execute
 ```
 
 ```shell
-./gradlew -PmainClass=io.vocidelcodice.todo.main.servlet.ServletApp execute
+./gradlew -PmainClass=io.vocidelcodice.todo.apps.servlet.ServletApp execute
 ```
 
 ```shell
-./gradlew -PmainClass=io.vocidelcodice.todo.main.console.ConsoleApp execute
+./gradlew -PmainClass=io.vocidelcodice.todo.apps.console.ConsoleApp execute
 ```

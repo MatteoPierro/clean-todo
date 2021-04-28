@@ -1,4 +1,4 @@
-package io.vocidelcodice.todo.main.spark;
+package io.vocidelcodice.todo.apps.spark;
 
 import static spark.Spark.*;
 

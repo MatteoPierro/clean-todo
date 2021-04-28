@@ -1,4 +1,4 @@
-package io.vocidelcodice.todo.main.console;
+package io.vocidelcodice.todo.apps.console;
 
 public class ConsoleApp {
 
