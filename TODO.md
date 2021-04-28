@@ -14,6 +14,7 @@
   - cosa cambia?
   - cosa dobbiamo aggiungere?
   - dovremo fare un nuovo presenter?
+* versione con i moduli separati esplicitamente
 * versione spark
 
 ## domande / dubbi / riflessioni
