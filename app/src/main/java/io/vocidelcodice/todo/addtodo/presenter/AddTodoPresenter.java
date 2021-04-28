@@ -4,14 +4,18 @@ import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputData;
 
 public class AddTodoPresenter implements AddTodoOutputBoundary {
-    private AddTodoViewModel viewModel;
+    private final AddTodoViewModel viewModel;
+
+    public AddTodoPresenter(AddTodoViewModel viewModel) {
+        this.viewModel = viewModel;
+    }
 
     @Override
     public void addTodoSucceeded(AddTodoOutputData addTodoOutputData) {
         this.viewModel.id = idToString(addTodoOutputData.id);
         this.viewModel.priority = priorityToString(addTodoOutputData.priority);
         this.viewModel.color = colorForPriority(addTodoOutputData.priority);
-        this.viewModel.notifyObservers();
+        this.viewModel.notifyViews();
     }
 
     private AddTodoViewModel.Color colorForPriority(AddTodoOutputData.Priority priority) {

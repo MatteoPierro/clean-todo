@@ -10,4 +10,9 @@ public class AddTodoViewModel extends Observable {
     public enum Color {
         Green, Red
     }
+
+    public void notifyViews() {
+        setChanged();
+        notifyObservers();
+    }
 }
