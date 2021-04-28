@@ -12,10 +12,10 @@ public class AddTodoPresenter implements AddTodoOutputBoundary {
 
     @Override
     public void addTodoSucceeded(AddTodoOutputData addTodoOutputData) {
-        this.viewModel.id = idToString(addTodoOutputData.id);
-        this.viewModel.priority = priorityToString(addTodoOutputData.priority);
-        this.viewModel.color = colorForPriority(addTodoOutputData.priority);
-        this.viewModel.notifyViews();
+        viewModel.id = idToString(addTodoOutputData.id);
+        viewModel.priority = priorityToString(addTodoOutputData.priority);
+        viewModel.color = colorForPriority(addTodoOutputData.priority);
+        viewModel.notifyViews();
     }
 
     private AddTodoViewModel.Color colorForPriority(AddTodoOutputData.Priority priority) {
