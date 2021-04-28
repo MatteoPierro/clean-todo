@@ -11,7 +11,7 @@ public class AddTodoPresenter implements AddTodoOutputBoundary {
         this.viewModel.id = idToString(addTodoOutputData.id);
         this.viewModel.priority = priorityToString(addTodoOutputData.priority);
         this.viewModel.color = colorForPriority(addTodoOutputData.priority);
-        this.viewModel.notifyAll();
+        this.viewModel.notifyObservers();
     }
 
     private AddTodoViewModel.Color colorForPriority(AddTodoOutputData.Priority priority) {

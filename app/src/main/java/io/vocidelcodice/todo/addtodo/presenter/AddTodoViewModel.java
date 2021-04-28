@@ -1,6 +1,8 @@
 package io.vocidelcodice.todo.addtodo.presenter;
 
-public class AddTodoViewModel {
+import java.util.Observable;
+
+public class AddTodoViewModel extends Observable {
     public String id;
     public String priority;
     public AddTodoViewModel.Color color;
