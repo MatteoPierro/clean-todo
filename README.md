@@ -3,7 +3,7 @@
 This is a playground for experimenting with the concepts of the Clean Architecture.
 
 
-### Running the apps
+## Running the apps
 
 ```shell
 ./gradlew -PmainClass=io.vocidelcodice.todo.apps.spark.SparkApp execute
@@ -13,7 +13,7 @@ This is a playground for experimenting with the concepts of the Clean Architectu
 ./gradlew -PmainClass=io.vocidelcodice.todo.apps.servlet.ServletApp execute
 ```
 
-#### console app
+### console app
 
 If `<a-todo-id>` is an integer id:
 
