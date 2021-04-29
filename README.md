@@ -13,6 +13,11 @@ This is a playground for experimenting with the concepts of the Clean Architectu
 ./gradlew -PmainClass=io.vocidelcodice.todo.apps.servlet.ServletApp execute
 ```
 
+#### console app
+
+If `<a-todo-id>` is an integer id:
+
 ```shell
-./gradlew -PmainClass=io.vocidelcodice.todo.apps.console.ConsoleApp execute
+./gradlew assemble
+java -cp app/build/libs/app.jar io.vocidelcodice.todo.apps.console.ConsoleApp <a-todo-id>
 ```
