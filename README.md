@@ -5,15 +5,18 @@ This is a playground for experimenting with the concepts of the Clean Architectu
 
 ## Running the apps
 
+### Spark app
 ```shell
 ./gradlew -PmainClass=io.vocidelcodice.todo.apps.spark.SparkApp execute
 ```
+
+### Servlet app
 
 ```shell
 ./gradlew -PmainClass=io.vocidelcodice.todo.apps.servlet.ServletApp execute
 ```
 
-### console app
+### Console app
 
 If `<a-todo-id>` is an integer id:
 
