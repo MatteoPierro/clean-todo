@@ -13,7 +13,7 @@
 * versione servlet
   - cosa cambia?
   - cosa dobbiamo aggiungere?
-  - dovremo fare un nuovo presenter?
+  - dovremo fare un nuovo presenter? veramente il presenter rimane uno solo a prescindere dal tipo di meccanismo di visualizzazione dell'output?
 * versione con i moduli separati esplicitamente
 * versione spark
 
