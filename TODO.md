@@ -25,4 +25,5 @@
 * un solo presenter oppure piu' presenter?
 * ma il modulo che contiene il controller contiene solo il controller? 
 * se separiamo in moduli distinti le app del “clean todo”, potremo avere anche diversi build.gradle con diverse dipendenze (ad es la console app non ha bisogno di spark o delle servlet)
-
+* il fatto che il controller sia solo veicolo di input verso l'applicazione ma non si occupi dell'output è legato al principio di separazione tra comandi e query?
+  - in [questa risposta](https://softwareengineering.stackexchange.com/questions/357052/clean-architecture-use-case-containing-the-presenter-or-returning-data) lo collegano al CQRS... ha senso?
