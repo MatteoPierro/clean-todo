@@ -14,7 +14,7 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
                 idToString(addTodoOutputData.id),
                 priorityToString(addTodoOutputData.priority),
                 colorForPriority(addTodoOutputData.priority),
-                addTodoOutputData.message);
+                successMessageFor(addTodoOutputData));
         notifyViews(viewModel);
     }
 
@@ -22,6 +22,12 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
     public void addTodoFailed(AddTodoViolations violation) {
         AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation));
         notifyViews(viewModel);
+    }
+
+    private String successMessageFor(AddTodoOutputData addTodoOutputData) {
+        return "TODO created with Id: " + idToString(addTodoOutputData.id)
+                + " priority: " + priorityToString(addTodoOutputData.priority)
+                + " message: " + addTodoOutputData.message;
     }
 
     private String violationToString(AddTodoViolations violation) {

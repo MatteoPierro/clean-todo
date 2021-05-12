@@ -10,7 +10,7 @@ public class AddTodoView implements Observer {
     public void update(Observable observable, Object arg) {
         AddTodoViewModel viewModel = (AddTodoViewModel) arg;
         if (viewModel.errorMessage.isBlank()) {
-            System.out.println("TODO created with Id: " + viewModel.id + " message: " + viewModel.message);
+            System.out.println(viewModel.message);
         } else {
             System.err.println(viewModel.errorMessage);
         }

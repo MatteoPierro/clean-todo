@@ -1,7 +1,7 @@
 # A clean todo TODO :D
 
-* => aggiungere metodi di factory per il ViewModel
-  - gestire il colore in caso di errore nel presenter/viewmodel invece che nella view
+* forse la view non dovrebbe gestire lei il messaggio di creazione TODO ma riceverlo dal presenter
+* gestire il colore in caso di errore nel presenter/viewmodel invece che nella view
 * supportare la localizzazione dei messaggi per la view
 * provare a visualizzare il colore del TODO nella console: cosa dobbiamo modificare?
 * versione dove il presenter delega l'observable ad una sua componente (invece di estendere lui observable)
