@@ -9,10 +9,25 @@ public class AddTodoView implements Observer {
     @Override
     public void update(Observable observable, Object arg) {
         AddTodoViewModel viewModel = (AddTodoViewModel) arg;
-        if (viewModel.errorMessage.isBlank()) {
-            System.out.println(viewModel.message);
+
+        System.out.println(colorFrom(viewModel) + messageFrom(viewModel));
+    }
+
+    private String colorFrom(AddTodoViewModel viewModel) {
+        if (viewModel.color == AddTodoViewModel.Color.Red) {
+            return "\033[0;31m";
+        } else if (viewModel.color == AddTodoViewModel.Color.Green) {
+            return "\033[0;32m";
         } else {
-            System.err.println(viewModel.errorMessage);
+            return "\u001B[33m"; // Yellow
+        }
+    }
+
+    private String messageFrom(AddTodoViewModel viewModel) {
+        if (viewModel.errorMessage.isBlank()) {
+            return viewModel.message;
+        } else {
+            return viewModel.errorMessage;
         }
     }
 }

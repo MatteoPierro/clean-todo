@@ -9,8 +9,8 @@ public class AddTodoViewModel {
         return new AddTodoViewModel(message, "", color);
     }
 
-    public static AddTodoViewModel failure(String errorMessage) {
-        return new AddTodoViewModel("", errorMessage, null);
+    public static AddTodoViewModel failure(String errorMessage, Color color) {
+        return new AddTodoViewModel("", errorMessage, color);
     }
 
     private AddTodoViewModel(String message, String errorMessage, Color color) {
@@ -20,6 +20,6 @@ public class AddTodoViewModel {
     }
 
     public enum Color {
-        Green, Red
+        Green, Red, Yellow
     }
 }

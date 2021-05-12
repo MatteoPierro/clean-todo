@@ -1,5 +1,6 @@
 package io.vocidelcodice.todo.addtodo.presenter;
 
+import io.vocidelcodice.todo.addtodo.presenter.AddTodoViewModel.Color;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputData;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoViolations;
@@ -19,7 +20,7 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
 
     @Override
     public void addTodoFailed(AddTodoViolations violation) {
-        AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation));
+        AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation), Color.Red);
         notifyViews(viewModel);
     }
 
@@ -42,9 +43,9 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
         notifyObservers(viewModel);
     }
 
-    private AddTodoViewModel.Color colorForPriority(AddTodoOutputData.Priority priority) {
-        if (priority == AddTodoOutputData.Priority.HIGH) return AddTodoViewModel.Color.Red;
-        return AddTodoViewModel.Color.Green;
+    private Color colorForPriority(AddTodoOutputData.Priority priority) {
+        if (priority == AddTodoOutputData.Priority.HIGH) return Color.Green;
+        return Color.Yellow;
     }
 
     private String idToString(Integer id) {
