@@ -1,8 +1,8 @@
 # A clean todo TODO :D
 
-* supportare la localizzazione dei messaggi per la view
 * versione dove il presenter delega l'observable ad una sua componente (invece di estendere lui observable)
   - strano che nel main siamo costretti a dichiarare l'output boundary come tipo concreto per poter poi fare addObserver...
+* supportare la localizzazione dei messaggi per la view
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
 * verificare la testabilità
   - che "faccia" avrebbe un test?
