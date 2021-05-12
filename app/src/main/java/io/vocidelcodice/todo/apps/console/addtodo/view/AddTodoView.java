@@ -8,7 +8,7 @@ import java.util.Observer;
 public class AddTodoView implements Observer {
     @Override
     public void update(Observable observable, Object arg) {
-        AddTodoViewModel viewModel = (AddTodoViewModel) observable;
+        AddTodoViewModel viewModel = (AddTodoViewModel) arg;
         System.out.println("TODO created with Id: " + viewModel.id);
     }
 }

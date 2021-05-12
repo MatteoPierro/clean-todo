@@ -26,9 +26,8 @@ public class ConsoleApp {
         AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccessInterface();
         AddTodoView view = new AddTodoView();
 
-        AddTodoViewModel viewModel = new AddTodoViewModel();
-        viewModel.addObserver(view);
-        AddTodoOutputBoundary addTodoPresenter = new AddTodoPresenter(viewModel);
+        AddTodoPresenter addTodoPresenter = new AddTodoPresenter();
+        addTodoPresenter.addObserver(view);
 
         AddTodoInputBoundary addTodoUseCase = new AddTodoUseCase(dataAccessInterface, addTodoPresenter);
 

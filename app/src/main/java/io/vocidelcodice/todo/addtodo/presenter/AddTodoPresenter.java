@@ -3,19 +3,22 @@ package io.vocidelcodice.todo.addtodo.presenter;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputData;
 
-public class AddTodoPresenter implements AddTodoOutputBoundary {
-    private final AddTodoViewModel viewModel;
+import java.util.Observable;
 
-    public AddTodoPresenter(AddTodoViewModel viewModel) {
-        this.viewModel = viewModel;
-    }
+public class AddTodoPresenter extends Observable implements AddTodoOutputBoundary {
 
     @Override
     public void addTodoSucceeded(AddTodoOutputData addTodoOutputData) {
+        AddTodoViewModel viewModel = new AddTodoViewModel();
         viewModel.id = idToString(addTodoOutputData.id);
         viewModel.priority = priorityToString(addTodoOutputData.priority);
         viewModel.color = colorForPriority(addTodoOutputData.priority);
-        viewModel.notifyViews();
+        notifyViews(viewModel);
+    }
+
+    private void notifyViews(AddTodoViewModel viewModel) {
+        setChanged();
+        notifyObservers(viewModel);
     }
 
     private AddTodoViewModel.Color colorForPriority(AddTodoOutputData.Priority priority) {
