@@ -11,10 +11,9 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
     @Override
     public void addTodoSucceeded(AddTodoOutputData addTodoOutputData) {
         AddTodoViewModel viewModel = AddTodoViewModel.success(
-                idToString(addTodoOutputData.id),
-                priorityToString(addTodoOutputData.priority),
-                colorForPriority(addTodoOutputData.priority),
-                successMessageFor(addTodoOutputData));
+                successMessageFor(addTodoOutputData),
+                colorForPriority(addTodoOutputData.priority)
+        );
         notifyViews(viewModel);
     }
 

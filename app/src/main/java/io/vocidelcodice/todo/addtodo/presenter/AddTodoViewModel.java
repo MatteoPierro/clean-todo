@@ -1,23 +1,19 @@
 package io.vocidelcodice.todo.addtodo.presenter;
 
 public class AddTodoViewModel {
-    public final String id;
-    public final String priority;
     public final AddTodoViewModel.Color color;
     public final String message;
     public final String errorMessage;
 
-    public static AddTodoViewModel success(String id, String priority, Color color, String message) {
-        return new AddTodoViewModel(id, priority, color, message, "");
+    public static AddTodoViewModel success(String message, Color color) {
+        return new AddTodoViewModel(message, "", color);
     }
 
     public static AddTodoViewModel failure(String errorMessage) {
-        return new AddTodoViewModel("", "", null, "", errorMessage);
+        return new AddTodoViewModel("", errorMessage, null);
     }
 
-    private AddTodoViewModel(String id, String priority, Color color, String message, String errorMessage) {
-        this.id = id;
-        this.priority = priority;
+    private AddTodoViewModel(String message, String errorMessage, Color color) {
         this.color = color;
         this.message = message;
         this.errorMessage = errorMessage;
