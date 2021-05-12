@@ -1,6 +1,7 @@
 # A clean todo TODO :D
 
-* provare ad aggiungere lo scenario di fallimento di creazione todo  
+* supportare la localizzazione dei messaggi per la view
+* aggiungere metodi di factory per il ViewModel
 * provare a visualizzare il colore del TODO nella console: cosa dobbiamo modificare?
 * versione dove il presenter delega l'observable ad una sua componente
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
@@ -19,6 +20,7 @@
 * qual'è il senso del controller? (joe)
   - Ha senso il controller? è quasi un man-in-the-middle...
 * come testo la parte web? (joe)
+* usiamo un solo ViewModel per la stessa View? (joe)
 * un solo presenter oppure piu' presenter?
 * ma il modulo che contiene il controller contiene solo il controller? 
 * se separiamo in moduli distinti le app del “clean todo”, potremo avere anche diversi build.gradle con diverse dipendenze (ad es la console app non ha bisogno di spark o delle servlet)

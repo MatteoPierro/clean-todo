@@ -4,11 +4,15 @@ public class AddTodoViewModel {
     public final String id;
     public final String priority;
     public final AddTodoViewModel.Color color;
+    public final String message;
+    public final String errorMessage;
 
-    public AddTodoViewModel(String id, String priority, Color color) {
+    public AddTodoViewModel(String id, String priority, Color color, String message, String errorMessage) {
         this.id = id;
         this.priority = priority;
         this.color = color;
+        this.message = message;
+        this.errorMessage = errorMessage;
     }
 
     public enum Color {

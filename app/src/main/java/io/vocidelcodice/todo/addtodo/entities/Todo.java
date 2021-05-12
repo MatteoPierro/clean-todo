@@ -18,4 +18,8 @@ public class Todo {
     public Priority priority() {
         return priority;
     }
+
+    public String message() {
+        return message;
+    }
 }
