@@ -1,15 +1,12 @@
 # A clean todo TODO :D
 
-* versione dove il presenter è l'observable
-  - `AddTodoViewModel` espone tutti i dati in maniera public anche in modifica
-  - pro: 
-    - il presenter non ha più stato,
-    - il wiring è leggermente più semplice (niente dettaglio sul viewmodel)
+* provare ad aggiungere lo scenario di fallimento di creazione todo  
 * provare a visualizzare il colore del TODO nella console: cosa dobbiamo modificare?
 * versione dove il presenter delega l'observable ad una sua componente
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
 * verificare la testabilità
   - che "faccia" avrebbe un test?
+  - come testiamo il presenter?
 * versione servlet
   - cosa cambia?
   - cosa dobbiamo aggiungere?
