@@ -10,25 +10,17 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
 
     @Override
     public void addTodoSucceeded(AddTodoOutputData addTodoOutputData) {
-        AddTodoViewModel viewModel = new AddTodoViewModel(
+        AddTodoViewModel viewModel = AddTodoViewModel.success(
                 idToString(addTodoOutputData.id),
                 priorityToString(addTodoOutputData.priority),
                 colorForPriority(addTodoOutputData.priority),
-                addTodoOutputData.message,
-                ""
-        );
+                addTodoOutputData.message);
         notifyViews(viewModel);
     }
 
     @Override
     public void addTodoFailed(AddTodoViolations violation) {
-        AddTodoViewModel viewModel = new AddTodoViewModel(
-                "",
-                "",
-                null,
-                "",
-                violationToString(violation)
-        );
+        AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation));
         notifyViews(viewModel);
     }
 
