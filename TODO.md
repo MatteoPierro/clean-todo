@@ -2,12 +2,14 @@
 
 * supportare la localizzazione dei messaggi per la view
 * versione dove il presenter delega l'observable ad una sua componente (invece di estendere lui observable)
+  - strano che nel main siamo costretti a dichiarare l'output boundary come tipo concreto per poter poi fare addObserver...
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
 * verificare la testabilità
   - che "faccia" avrebbe un test?
   - come testiamo il presenter?
 * versione servlet
   - cosa cambia?
+* e se devo restituire JSON?
   - cosa dobbiamo aggiungere?
   - dovremo fare un nuovo presenter? veramente il presenter rimane uno solo a prescindere dal tipo di meccanismo di visualizzazione dell'output?
 * versione con i moduli separati esplicitamente
