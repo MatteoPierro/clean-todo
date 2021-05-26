@@ -4,10 +4,15 @@ import io.vocidelcodice.todo.addtodo.presenter.AddTodoViewModel.Color;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputData;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoViolations;
+import io.vocidelcodice.todo.apps.console.addtodo.view.AddTodoView;
 
 import java.util.Observable;
 
 public class AddTodoPresenter extends Observable implements AddTodoOutputBoundary {
+
+    public void subscribe(AddTodoView view) {
+        addObserver(view);
+    }
 
     @Override
     public void addTodoSucceeded(AddTodoOutputData addTodoOutputData) {
