@@ -8,8 +8,9 @@ import io.vocidelcodice.todo.apps.console.addtodo.view.AddTodoView;
 
 import java.util.Observable;
 
-public class AddTodoPresenter extends Observable implements AddTodoOutputBoundary {
+public class AddTodoPresenter extends Observable implements AddTodoOutputBoundary, ViewModelNotifier {
 
+    @Override
     public void subscribe(AddTodoView view) {
         addObserver(view);
     }
@@ -43,7 +44,8 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
         return "";
     }
 
-    private void notifyViews(AddTodoViewModel viewModel) {
+    @Override
+    public void notifyViews(AddTodoViewModel viewModel) {
         setChanged();
         notifyObservers(viewModel);
     }
