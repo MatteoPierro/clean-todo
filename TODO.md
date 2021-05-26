@@ -1,6 +1,7 @@
 # A clean todo TODO :D
 
 * potremmo rendere generico il ViewModelPublisher?
+* staccare la AddTodoView dall'Observer di Java
 * supportare la localizzazione dei messaggi per la view
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
 * verificare la testabilità
