@@ -8,11 +8,13 @@ import io.vocidelcodice.todo.apps.console.addtodo.view.AddTodoView;
 
 import java.util.Observable;
 
-public class AddTodoPresenter extends Observable implements AddTodoOutputBoundary, ViewModelNotifier {
+public class AddTodoPresenter implements AddTodoOutputBoundary, ViewModelNotifier {
+
+    private final ObservableViewModelNotifier observableViewModelNotifier = new ObservableViewModelNotifier();
 
     @Override
     public void subscribe(AddTodoView view) {
-        addObserver(view);
+        observableViewModelNotifier.subscribe(view);
     }
 
     @Override
@@ -21,13 +23,13 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
                 successMessageFor(addTodoOutputData),
                 colorForPriority(addTodoOutputData.priority)
         );
-        notifyViews(viewModel);
+        observableViewModelNotifier.notifyViews(viewModel);
     }
 
     @Override
     public void addTodoFailed(AddTodoViolations violation) {
         AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation), Color.Red);
-        notifyViews(viewModel);
+        observableViewModelNotifier.notifyViews(viewModel);
     }
 
     private String successMessageFor(AddTodoOutputData addTodoOutputData) {
@@ -46,8 +48,7 @@ public class AddTodoPresenter extends Observable implements AddTodoOutputBoundar
 
     @Override
     public void notifyViews(AddTodoViewModel viewModel) {
-        setChanged();
-        notifyObservers(viewModel);
+        observableViewModelNotifier.notifyViews(viewModel);
     }
 
     private Color colorForPriority(AddTodoOutputData.Priority priority) {
