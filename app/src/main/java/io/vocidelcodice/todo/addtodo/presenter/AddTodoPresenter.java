@@ -6,15 +6,12 @@ import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputData;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoViolations;
 import io.vocidelcodice.todo.apps.console.addtodo.view.AddTodoView;
 
-import java.util.Observable;
+public class AddTodoPresenter implements AddTodoOutputBoundary {
 
-public class AddTodoPresenter implements AddTodoOutputBoundary, ViewModelNotifier {
+    private final ViewModelNotifier viewModelNotifier;
 
-    private final ObservableViewModelNotifier observableViewModelNotifier = new ObservableViewModelNotifier();
-
-    @Override
-    public void subscribe(AddTodoView view) {
-        observableViewModelNotifier.subscribe(view);
+    public AddTodoPresenter(ViewModelNotifier viewModelNotifier) {
+        this.viewModelNotifier = viewModelNotifier;
     }
 
     @Override
@@ -23,13 +20,13 @@ public class AddTodoPresenter implements AddTodoOutputBoundary, ViewModelNotifie
                 successMessageFor(addTodoOutputData),
                 colorForPriority(addTodoOutputData.priority)
         );
-        observableViewModelNotifier.notifyViews(viewModel);
+        viewModelNotifier.notifyViews(viewModel);
     }
 
     @Override
     public void addTodoFailed(AddTodoViolations violation) {
         AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation), Color.Red);
-        observableViewModelNotifier.notifyViews(viewModel);
+        viewModelNotifier.notifyViews(viewModel);
     }
 
     private String successMessageFor(AddTodoOutputData addTodoOutputData) {
@@ -44,11 +41,6 @@ public class AddTodoPresenter implements AddTodoOutputBoundary, ViewModelNotifie
         }
 
         return "";
-    }
-
-    @Override
-    public void notifyViews(AddTodoViewModel viewModel) {
-        observableViewModelNotifier.notifyViews(viewModel);
     }
 
     private Color colorForPriority(AddTodoOutputData.Priority priority) {
