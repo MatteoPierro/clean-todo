@@ -1,6 +1,6 @@
 # A clean todo TODO :D
 
-* Dependency Rule: ViewModelNotifier non dovrebbe dipendere dalla View.
+* potremmo rendere generico il ViewModelPublisher?
 * supportare la localizzazione dei messaggi per la view
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
 * verificare la testabilità
