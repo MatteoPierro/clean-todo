@@ -1,11 +1,12 @@
 package io.vocidelcodice.todo.apps.console.addtodo.view;
 
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoViewModel;
+import io.vocidelcodice.todo.addtodo.presenter.ViewModelSubscriber;
 
 import java.util.Observable;
 import java.util.Observer;
 
-public class AddTodoView implements Observer {
+public class AddTodoView implements Observer, ViewModelSubscriber {
     @Override
     public void update(Observable observable, Object arg) {
         AddTodoViewModel viewModel = (AddTodoViewModel) arg;

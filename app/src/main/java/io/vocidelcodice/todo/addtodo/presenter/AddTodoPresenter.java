@@ -4,14 +4,13 @@ import io.vocidelcodice.todo.addtodo.presenter.AddTodoViewModel.Color;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputData;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoViolations;
-import io.vocidelcodice.todo.apps.console.addtodo.view.AddTodoView;
 
 public class AddTodoPresenter implements AddTodoOutputBoundary {
 
-    private final ViewModelNotifier viewModelNotifier;
+    private final ViewModelPublisher viewModelPublisher;
 
-    public AddTodoPresenter(ViewModelNotifier viewModelNotifier) {
-        this.viewModelNotifier = viewModelNotifier;
+    public AddTodoPresenter(ViewModelPublisher viewModelPublisher) {
+        this.viewModelPublisher = viewModelPublisher;
     }
 
     @Override
@@ -20,13 +19,13 @@ public class AddTodoPresenter implements AddTodoOutputBoundary {
                 successMessageFor(addTodoOutputData),
                 colorForPriority(addTodoOutputData.priority)
         );
-        viewModelNotifier.notifyViews(viewModel);
+        viewModelPublisher.publish(viewModel);
     }
 
     @Override
     public void addTodoFailed(AddTodoViolations violation) {
         AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation), Color.Red);
-        viewModelNotifier.notifyViews(viewModel);
+        viewModelPublisher.publish(viewModel);
     }
 
     private String successMessageFor(AddTodoOutputData addTodoOutputData) {

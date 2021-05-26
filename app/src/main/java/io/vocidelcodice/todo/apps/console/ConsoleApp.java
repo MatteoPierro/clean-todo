@@ -8,8 +8,8 @@ import io.vocidelcodice.todo.addtodo.persistence.InMemoryAddTodoDataAccessInterf
 
 // presenter module
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoPresenter;
-import io.vocidelcodice.todo.addtodo.presenter.ViewModelNotifier;
-import io.vocidelcodice.todo.addtodo.presenter.ObservableViewModelNotifier;
+import io.vocidelcodice.todo.addtodo.presenter.ViewModelPublisher;
+import io.vocidelcodice.todo.apps.console.addtodo.view.ObservableViewModelPublisher;
 
 // usecase module
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoDataAccessInterface;
@@ -26,9 +26,9 @@ public class ConsoleApp {
     public static void main(String[] args) {
         AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccessInterface();
 
-        ViewModelNotifier viewModelNotifier = new ObservableViewModelNotifier();
-        viewModelNotifier.subscribe(new AddTodoView());
-        AddTodoOutputBoundary addTodoPresenter = new AddTodoPresenter(viewModelNotifier);
+        ViewModelPublisher viewModelPublisher = new ObservableViewModelPublisher();
+        viewModelPublisher.subscribe(new AddTodoView());
+        AddTodoOutputBoundary addTodoPresenter = new AddTodoPresenter(viewModelPublisher);
 
         AddTodoInputBoundary addTodoUseCase = new AddTodoUseCase(dataAccessInterface, addTodoPresenter);
 
