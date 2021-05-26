@@ -2,23 +2,19 @@ package io.vocidelcodice.todo.apps.console;
 
 // controller module
 import io.vocidelcodice.todo.addtodo.controller.AddTodoController;
-
-// database adapter module
 import io.vocidelcodice.todo.addtodo.persistence.InMemoryAddTodoDataAccessInterface;
-
-// presenter module
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoPresenter;
-import io.vocidelcodice.todo.addtodo.presenter.ViewModelPublisher;
-import io.vocidelcodice.todo.apps.console.addtodo.view.ObservableViewModelPublisher;
-
-// usecase module
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoDataAccessInterface;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoInputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoOutputBoundary;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoUseCase;
-
-// console view module
 import io.vocidelcodice.todo.apps.console.addtodo.view.AddTodoView;
+import io.vocidelcodice.todo.apps.console.addtodo.view.ObservableViewModelPublisher;
+
+// database adapter module
+// presenter module
+// usecase module
+// console view module
 
 // main module
 public class ConsoleApp {
@@ -26,8 +22,8 @@ public class ConsoleApp {
     public static void main(String[] args) {
         AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccessInterface();
 
-        ViewModelPublisher viewModelPublisher = new ObservableViewModelPublisher();
-        viewModelPublisher.subscribe(new AddTodoView());
+        ObservableViewModelPublisher viewModelPublisher = new ObservableViewModelPublisher();
+        viewModelPublisher.addObserver(new AddTodoView());
         AddTodoOutputBoundary addTodoPresenter = new AddTodoPresenter(viewModelPublisher);
 
         AddTodoInputBoundary addTodoUseCase = new AddTodoUseCase(dataAccessInterface, addTodoPresenter);
