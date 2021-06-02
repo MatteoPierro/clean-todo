@@ -1,6 +1,7 @@
 # A clean todo TODO :D
 
-* potremmo rendere generico il ViewModelPublisher?
+* fare implementare l'interfaccia del publisher alla view
+* come cambia l'observableViewModelPublisher se non usassimo l'Observable di Java
 * staccare la AddTodoView dall'Observer di Java
 * supportare la localizzazione dei messaggi per la view
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
@@ -14,6 +15,7 @@
   - dovremo fare un nuovo presenter? veramente il presenter rimane uno solo a prescindere dal tipo di meccanismo di visualizzazione dell'output?
 * versione con i moduli separati esplicitamente
 * versione spark
+* potremmo rendere generico il ViewModelPublisher? (aspettiamo di avere un secondo usecase)
 
 ## domande / dubbi / riflessioni
 
