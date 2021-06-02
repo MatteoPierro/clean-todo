@@ -8,7 +8,7 @@ import static org.eclipse.jetty.servlet.ServletContextHandler.SESSIONS;
 public class ServletApp {
 
     public static void main(String[] args) throws Exception {
-        Server server = new Server(8080);
+        Server server = new Server(8082);
         server.setHandler(requestHandler());
         server.start();
         server.join();
@@ -17,6 +17,7 @@ public class ServletApp {
     private static ServletContextHandler requestHandler() {
         ServletContextHandler requestHandler = new ServletContextHandler(SESSIONS);
         requestHandler.addServlet(HelloServlet.class, "/hello");
+        requestHandler.addServlet(TodoServlet.class, "/todo");
         return requestHandler;
     }
 }
