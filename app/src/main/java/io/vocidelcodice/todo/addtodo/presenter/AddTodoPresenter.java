@@ -7,10 +7,10 @@ import io.vocidelcodice.todo.addtodo.usecase.AddTodoViolations;
 
 public class AddTodoPresenter implements AddTodoOutputBoundary {
 
-    private final ViewModelPublisher viewModelPublisher;
+    private final AddTodoView addTodoView;
 
-    public AddTodoPresenter(ViewModelPublisher viewModelPublisher) {
-        this.viewModelPublisher = viewModelPublisher;
+    public AddTodoPresenter(AddTodoView addTodoView) {
+        this.addTodoView = addTodoView;
     }
 
     @Override
@@ -19,13 +19,13 @@ public class AddTodoPresenter implements AddTodoOutputBoundary {
                 successMessageFor(addTodoOutputData),
                 colorForPriority(addTodoOutputData.priority)
         );
-        viewModelPublisher.publish(viewModel);
+        addTodoView.render(viewModel);
     }
 
     @Override
     public void addTodoFailed(AddTodoViolations violation) {
         AddTodoViewModel viewModel = AddTodoViewModel.failure(violationToString(violation), Color.Red);
-        viewModelPublisher.publish(viewModel);
+        addTodoView.render(viewModel);
     }
 
     private String successMessageFor(AddTodoOutputData addTodoOutputData) {

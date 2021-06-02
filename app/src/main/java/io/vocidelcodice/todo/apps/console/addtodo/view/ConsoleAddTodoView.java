@@ -1,15 +1,11 @@
 package io.vocidelcodice.todo.apps.console.addtodo.view;
 
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoViewModel;
+import io.vocidelcodice.todo.addtodo.presenter.AddTodoView;
 
-import java.util.Observable;
-import java.util.Observer;
-
-public class AddTodoView implements Observer {
+public class ConsoleAddTodoView implements AddTodoView {
     @Override
-    public void update(Observable observable, Object arg) {
-        AddTodoViewModel viewModel = (AddTodoViewModel) arg;
-
+    public void render(AddTodoViewModel viewModel) {
         System.out.println(colorFrom(viewModel) + messageFrom(viewModel));
     }
 

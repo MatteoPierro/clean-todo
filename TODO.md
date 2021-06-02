@@ -1,8 +1,5 @@
 # A clean todo TODO :D
 
-* fare implementare l'interfaccia del publisher alla view
-* come cambia l'observableViewModelPublisher se non usassimo l'Observable di Java
-* staccare la AddTodoView dall'Observer di Java
 * supportare la localizzazione dei messaggi per la view
 * restringere la visibilità di `AddTodoUseCase`: non dovrebbe essere public
 * verificare la testabilità
