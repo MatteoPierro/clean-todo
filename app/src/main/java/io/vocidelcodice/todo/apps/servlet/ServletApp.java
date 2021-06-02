@@ -16,7 +16,6 @@ public class ServletApp {
 
     private static ServletContextHandler requestHandler() {
         ServletContextHandler requestHandler = new ServletContextHandler(SESSIONS);
-        requestHandler.addServlet(HelloServlet.class, "/hello");
         requestHandler.addServlet(TodoServlet.class, "/todo");
         return requestHandler;
     }
