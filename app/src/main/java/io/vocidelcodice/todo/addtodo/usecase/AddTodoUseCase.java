@@ -14,7 +14,7 @@ public class AddTodoUseCase implements AddTodoInputBoundary {
 
     @Override
     public void execute(AddTodoInputData addTodoInputData) {
-        if (addTodoInputData.message.isBlank()) {
+        if (isEmptyMessage(addTodoInputData.message)) {
             outputBoundary.addTodoFailed(AddTodoViolations.EMPTY_MESSAGE);
             return;
         }
@@ -23,6 +23,10 @@ public class AddTodoUseCase implements AddTodoInputBoundary {
         dataAccessInterface.add(todo);
 
         outputBoundary.addTodoSucceeded(toOutputData(todo));
+    }
+
+    private boolean isEmptyMessage(String message) {
+        return message == null || message.isBlank();
     }
 
     private AddTodoOutputData toOutputData(Todo todo) {

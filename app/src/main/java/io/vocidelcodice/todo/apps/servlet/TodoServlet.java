@@ -31,7 +31,6 @@ public class TodoServlet extends HttpServlet {
     }
 
     private String parseMessage(HttpServletRequest req) throws IOException {
-        String message = req.getReader().readLine();
-        return message == null ? "" : message;
+        return req.getReader().readLine();
     }
 }
