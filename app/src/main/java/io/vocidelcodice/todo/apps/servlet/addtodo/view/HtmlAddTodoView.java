@@ -1,4 +1,4 @@
-package io.vocidelcodice.todo.apps.servlet;
+package io.vocidelcodice.todo.apps.servlet.addtodo.view;
 
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoView;
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoViewModel;
