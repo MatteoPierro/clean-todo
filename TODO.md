@@ -22,7 +22,7 @@
 
 ## domande / dubbi / riflessioni
 
-* qual'è il senso del controller? (joe)
+* qual è il senso del controller? (joe)
   - Ha senso il controller? è quasi un man-in-the-middle...
 * come testo la parte web? (joe)
 * usiamo un solo ViewModel per la stessa View? (joe)
