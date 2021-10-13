@@ -5,7 +5,7 @@
 * Provare arch-unit nella "clean-todo" app
 
 * versione servlet
-  * se devo leggere un payload JSON come cambia il codice della versione servlet?
+  * se devo leggere un pay  come cambia il codice della versione servlet?
   - e se devo restituire JSON?
   - cosa cambia? => abbiamo dovuto specificare una view diversa, tutto il resto è stato riusato
   - cosa dobbiamo aggiungere? => la view html e la TodoServlet
