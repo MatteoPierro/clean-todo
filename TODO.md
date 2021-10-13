@@ -1,9 +1,13 @@
 # A clean todo TODO :D
 
+* Provare a scrivere una "Testing API" sulla Clean ToDo App
+* Provare nella "clean-todo" un esempio di full-fledged architectural boundary e one-dimensional boundary per la parte di persistenza
+* Provare arch-unit nella "clean-todo" app
+
 * versione servlet
   * se devo leggere un payload JSON come cambia il codice della versione servlet?
   - e se devo restituire JSON?
-  - cosa cambia? => abbiamo dovuto specifica una view diversa, tutto il resto è stato riusato
+  - cosa cambia? => abbiamo dovuto specificare una view diversa, tutto il resto è stato riusato
   - cosa dobbiamo aggiungere? => la view html e la TodoServlet
   - dovremo fare un nuovo presenter? veramente il presenter rimane uno solo a prescindere dal tipo di meccanismo di visualizzazione dell'output? => dipende dal view model... se cambia il view model, cambia il presenter
 
