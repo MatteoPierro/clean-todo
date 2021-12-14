@@ -4,8 +4,8 @@ import io.vocidelcodice.todo.addtodo.entities.Priority;
 import io.vocidelcodice.todo.addtodo.entities.Todo;
 
 public class AddTodoUseCase implements AddTodoInputBoundary {
-    private AddTodoDataAccessInterface dataAccessInterface;
-    private AddTodoOutputBoundary outputBoundary;
+    private final AddTodoDataAccessInterface dataAccessInterface;
+    private final AddTodoOutputBoundary outputBoundary;
 
     public AddTodoUseCase(AddTodoDataAccessInterface dataAccessInterface, AddTodoOutputBoundary outputBoundary) {
         this.dataAccessInterface = dataAccessInterface;
