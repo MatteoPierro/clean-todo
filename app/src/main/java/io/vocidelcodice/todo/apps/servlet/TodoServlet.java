@@ -1,7 +1,7 @@
 package io.vocidelcodice.todo.apps.servlet;
 
 import io.vocidelcodice.todo.addtodo.controller.AddTodoController;
-import io.vocidelcodice.todo.addtodo.persistence.InMemoryAddTodoDataAccessInterface;
+import io.vocidelcodice.todo.addtodo.persistence.InMemoryAddTodoDataAccess;
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoPresenter;
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoView;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoDataAccessInterface;
@@ -19,7 +19,7 @@ public class TodoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccessInterface();
+        AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccess();
 
         AddTodoView addTodoView = new HtmlAddTodoView(resp);
         AddTodoOutputBoundary addTodoPresenter = new AddTodoPresenter(addTodoView);

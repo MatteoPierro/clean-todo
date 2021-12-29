@@ -6,7 +6,7 @@ import io.vocidelcodice.todo.addtodo.usecase.AddTodoDataAccessInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InMemoryAddTodoDataAccessInterface implements AddTodoDataAccessInterface {
+public class InMemoryAddTodoDataAccess implements AddTodoDataAccessInterface {
     private static final List<Todo> TODOS = new ArrayList<>();
 
     @Override

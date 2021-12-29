@@ -1,7 +1,7 @@
 package io.vocidelcodice.todo.apps.console;
 
 import io.vocidelcodice.todo.addtodo.controller.AddTodoController;
-import io.vocidelcodice.todo.addtodo.persistence.InMemoryAddTodoDataAccessInterface;
+import io.vocidelcodice.todo.addtodo.persistence.InMemoryAddTodoDataAccess;
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoPresenter;
 import io.vocidelcodice.todo.addtodo.presenter.AddTodoView;
 import io.vocidelcodice.todo.addtodo.usecase.AddTodoDataAccessInterface;
@@ -13,7 +13,7 @@ import io.vocidelcodice.todo.apps.console.addtodo.view.ConsoleAddTodoView;
 public class ConsoleApp {
 
     public static void main(String[] args) {
-        AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccessInterface();
+        AddTodoDataAccessInterface dataAccessInterface = new InMemoryAddTodoDataAccess();
 
         AddTodoView addTodoView = new ConsoleAddTodoView();
         AddTodoOutputBoundary addTodoPresenter = new AddTodoPresenter(addTodoView);
